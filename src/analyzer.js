@@ -21,14 +21,14 @@ const analyzer = {
   getCharacterCountExcludingSpaces: (text) => {
     //TODO: esta función debe retornar el recuento de caracteres excluyendo espacios y signos de puntuación que se encuentran en el parámetro `text` de tipo `string`.
     text = text.trim();
-    let characterCount = 0;
+    let contadorCaracteres = 0;
     for (let i = 0; i < text.length; i++) {
       const chart = text[i];
       if (chart !== ' ' && !['.', ',', '!'].includes(chart)) {
-        characterCount++; 
+        contadorCaracteres++; 
       }
     }
-    return characterCount;
+    return contadorCaracteres;
   },
 
   getNumberCount: (text) => {
@@ -39,18 +39,18 @@ const analyzer = {
     if (text[text.length - 1] === ".") {
       text = text.substring(0, text.length - 1);
     }
-    const words = text.split(" ");
-    let count = 0;
-    for (let i = 0; i < words.length; i++) {
-      const numero = parseFloat(words[i]); 
-      while (words[i].endsWith("0")) {
-        words[i] = words[i].substring(0, words[i].length - 1); 
+    const palabras = text.split(" ");
+    let contar = 0;
+    for (let i = 0; i < palabras.length; i++) {
+      const numero = parseFloat(palabras[i]); 
+      while (palabras[i].endsWith("0")) {
+        palabras[i] = palabras[i].substring(0, palabras[i].length - 1); 
       }
-      if (!isNaN(numero) && words[i] === numero.toString()) {
-        count++;
+      if (!isNaN(numero) && palabras[i] === numero.toString()) {
+        contar++;
       }
     }
-    return count;
+    return contar;
   },
 
   getNumberSum: (text) => {
@@ -61,30 +61,30 @@ const analyzer = {
     if (text[text.length - 1] === ".") {
       text = text.substring(0, text.length - 1);
     }
-    const words = text.split(" ");
-    let count = 0;
-    for (let i = 0; i < words.length; i++) {
-      const numero = parseFloat(words[i]); 
-      while (words[i].endsWith("0")) {
-        words[i] = words[i].substring(0, words[i].length - 1);
+    const palabras = text.split(" ");
+    let contar = 0;
+    for (let i = 0; i < palabras.length; i++) {
+      const numero = parseFloat(palabras[i]); 
+      while (palabras[i].endsWith("0")) {
+        palabras[i] = palabras[i].substring(0, palabras[i].length - 1);
       }
-      if (!isNaN(numero) && words[i] === numero.toString()) {
-        count = count + numero;
+      if (!isNaN(numero) && palabras[i] === numero.toString()) {
+        contar = contar + numero;
       }
     }
-    return count;
+    return contar;
   },
 
   getAverageWordLength: (text) => {
     //TODO: esta función debe retornar la longitud media de palabras que se encuentran en el parámetro `text` de tipo `string`.
-    const txt = text.trim(); 
-    const words = txt.split(" "); 
+    const texto = text.trim(); 
+    const palabras = texto.split(" "); 
 
     let long = 0;
-    words.forEach(function (word) { 
+    palabras.forEach(function (word) { 
       long = long + word.length;
     });
-    return Number((long / words.length).toFixed(2));
+    return Number((long / palabras.length).toFixed(2));
   },
 };
 
