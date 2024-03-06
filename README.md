@@ -34,4 +34,4 @@ Esta aplicación es muy sencilla de utilizar: solo debes ingresar un texto dentr
 
 Realizado por Mireilys Astudillo
 
-                ¡Gracias por analizar tus textos con esta aplicación!
+            ¡Gracias por analizar tus textos con esta aplicación!.
